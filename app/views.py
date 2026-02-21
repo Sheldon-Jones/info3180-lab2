@@ -45,3 +45,19 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
+# creating view function
+@app.route('/profile')
+def profile():
+    """Render user's profile."""
+    profile_data = {
+        "fullName": "George Jones",
+        "username": "oneGjones",
+        "location": "Portmore, St. Catherine",
+        "join_date": "January 2025",
+        "interests": "I like playing football and doing art. It would be nice to meet friends who like those as well",
+        "num_post": "15",
+        "num_following": "233",
+        "num_followers": "233",
+    }
+    return render_template('profile.html', name="George Jones")
