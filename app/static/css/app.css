@@ -1,3 +1,82 @@
 body {
     padding-top: 5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 500px;
+    height:700px;
+    border-radius: 10px;
+    border: solid gray;
+    
+}
+
+.image-container{
+    background-color: rgb(5, 179, 5);
+    display: flex;
+    width: auto;
+    height: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profilepic{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border: 5px solid   wheat;
+       
+}
+
+.details{
+    color: gray;
+
+}
+
+.followButton{
+    
+    background-color:greenyellow;
+    color: white;
+    border-radius: 3px;
+    width: 100px;
+    border: none;
+   
+}
+
+.btnArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.follow-actions {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    
+}
+
+.following {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.actionNum{
+    color: rgb(73, 72, 72);
+    font-weight: 4px;
+    font-size: 20px;
 }

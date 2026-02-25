@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from datetime   import datetime, date
 
 
 ###
@@ -15,7 +16,7 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Sheldon Jones")
 
 
 ###
@@ -46,18 +47,25 @@ def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
 
+
+"""returns the month and year from date provided"""
+def format_date_joined(date):
+        return date.strftime("%B, %Y")
+
 # creating view function
-@app.route('/profile')
-def profile():
+@app.route('/profile/')
+def view_profile():
     """Render user's profile."""
-    profile_data = {
-        "fullName": "George Jones",
-        "username": "oneGjones",
-        "location": "Portmore, St. Catherine",
-        "join_date": "January 2025",
-        "interests": "I like playing football and doing art. It would be nice to meet friends who like those as well",
-        "num_post": "15",
-        "num_following": "233",
-        "num_followers": "233",
-    }
-    return render_template('profile.html', name="George Jones")
+
+    
+    date_joined = date(2025, 12, 4)  
+    formatted_date = format_date_joined(date_joined)
+
+    return render_template('profile.html', fullName= "George Jones", username= "oneGjones", email="onegjones@helloworld",
+        location= "Portmore, St. Catherine", joined_date= formatted_date,
+        bio= "I like playing football and doing art. It would be nice to meet friends who like those as well",
+        num_post= "15",
+        num_following= "23",
+        num_followers= "1236",)
+  
+    

@@ -1,59 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
-    <style>
-        .profile-container {
-            max-width: 800px;
-            margin: 50px auto;
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            background-color: #eee;
-            border-radius: 10px;
-        }
-        .info-header {
-            border-bottom: 2px solid #007bff;
-            margin-bottom: 10px;
-        }
-        .details p {
-            margin: 5px 0;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block main %}
 
     <div class="profile-container">
-        <div class="profile-image">
+        <div class="image-container">
             <img src="{{ url_for('static', filename='images/profile_img.png') }}" alt="Profile picture" class="profilepic">
-        </div>
-
-        <div class="profile-details">
-            <div class="info-header">
-                <h1>{{ user.full_name }}</h1>
-                <p>@{{ user.username }}</p>
+                <h1>{{ fullName }}</h1>
+                <p>@{{ username }}</p>
+                <p><strong>Email:</strong> {{ email }}</p>
+                <p><strong>Location:</strong> {{ location }}</p>
+                <p><strong>Joined:</strong> {{ joined_date }}</p>
+                
             </div>
-            
+            <hr>
             <div class="details">
-                <p><strong>Email:</strong> {{ user.email }}</p>
-                <p><strong>Location:</strong> {{ user.location }}</p>
-                <p><strong>Joined:</strong> {{ user.joined_date }}</p>
-                <hr>
+                
                 <p><strong>A little about me:</strong></p>
-                <p>{{ user.bio }}</p>
-            </div>
+                <p>{{ bio }}</p>
+
+    <div class = "follow-actions" >
+                   
+        <div class="following">
+            <span class="actionNum">15</span>
+            <span class="action-label">Posts</span>
+        </div>
+        <div class="following">
+            <span class="actionNum">23</span>
+            <span class="action-label">Following</span>
+        </div>
+        <div class="following">
+            <span class="actionNum"">1236</span>
+            <span class="action-label">Followers</span>
         </div>
     </div>
 
-</body>
-</html>
+     <div class= "btnArea">
+    <button class="followButton"><strong>Follow</strong></button>
+    </div>
+    
+     </div>
+            
+    
+             
+    
+    </div>
+    
+    
+{% endblock %}
